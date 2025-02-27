@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Gordon",
+  lastName: "Lemmey",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "AI Powered Product Manager",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -17,8 +17,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I write about my thoughts, learning and observations on AI and Product Management.
     </>
   ),
 };
@@ -29,22 +28,18 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/Lemmeyg",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/gordonlemmey/",
   },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
-  },
+
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "GordonLemmey@gmail.com",
   },
 ];
 
@@ -52,11 +47,10 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Product Manager and AI Explorer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Gordon and I am using, and building, AI-powered solutions to learn more about the power of AI. I am a Product Manager for a Large eCommerce/Saas Solutions and on my own time I explore AI with a passion.
     </>
   ),
 };
@@ -81,9 +75,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Gordon is a Product Manager with extensive experience in Product development and market optimization, primarily in the automotive industry. Based on the East Coast, he specializes in identifying and defining complex business problems and scoping SaaS solutions. With a passion for exploring the application of AI, he is currently utilizing and building with AI in both his professional role and on his own time.
       </>
     ),
   },
@@ -92,18 +84,20 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "Independent AI Development (Indy-Hacker)",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Developed a suite of AI-powered productivity tools using Large Language Models (LLMs) including OpenAI, Claude, Cursor and Vercel/V0.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Created specialized AI agents and chatbots for professional workflows, focusing on customer service, market research and data cleansing.
           </>,
+          <>
+            Engineered custom AI solutions for business intelligence and market analysis, demonstrating practical applications of emerging AI technologies.
+
+        </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -116,25 +110,65 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Senior Product Manager",
+        timeframe: "2021 - Present",
+        role: "",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Led strategic development of premium SaaS products, managing solutions that process over $150 billion in pricing inquiries and facilitate $7 billion in transaction volume annually.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Responsible for engineering and maintaining SaaS integrations, delivering over $300M in transactions annualy
+            </>,
+          <>
+            Responsible for Roadmap and product discovery strategies across B2B eCommerce solutions.
           </>,
+          <>
+            Spearheaded Voice of Customer research initiatives that shaped product development, realizing multi-million opportunities in new sectors.
+          </>,
+          <>
+            Leveraged machine learning models to identify market inefficiencies, resulting in improved margin performance across the platform.
+        </>,
         ],
-        images: [],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Key Account Manager",
+        timeframe: "2017 - 2021",
+        role: "",
+        achievements: [
+          <>
+            Pioneered Ai-powered dynamic pricing strategy for a $400M product portfolio, successfully implementing cloud-based SaaS solutions across national retail networks
+          </>,
+          <>
+            Increased market share by 20% through e-commerce implementations, generating over $100M in revenue.
+          </>,
+          <>
+            Negotiated multi-million dollar contracts with Fortune 500 companies and international manufacturers, establishing key partnerships that drove business growth.
+           </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Once UI Project",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -149,11 +183,11 @@ const about = {
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technology",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "Cursor",
+        description: <>Experienced with AI-coding Agents to create production standard applications</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -171,12 +205,45 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Open Source LLMs",
+        description: <>Utilizing Open source LLMs such as OpenAI, Claude, Perplexity  threough APIs to offer low cost integrations into for applications</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Make.com",
+        description: <>Builds with this Low-Code solution, connecting everyday applications such as Gmail, office and websites for fast, low cost application building</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        
+        ],
+      },
+      {
+        title: "RapidAPI",
+        description: <>Leverages information "marketplace" to access a diverse range of API enabling utilization within apps.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/cover-03.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -188,15 +255,15 @@ const about = {
 };
 
 const blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "Resources and Blog",
+  title: "What has caught my attention recently...",
+  description: `What has ${person.name} has been consuming recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work = {
-  label: "Work",
+  label: "Projects",
   title: "My projects",
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
