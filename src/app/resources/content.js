@@ -190,14 +190,8 @@ const about = {
         description: <>Experienced with AI-coding Agents to create production standard applications</>,
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
+                   {
+            src: "/images/projects/cursor1.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -223,13 +217,12 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/images/projects/makedotcom.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
           },
-        
-        ],
+               ],
       },
       {
         title: "RapidAPI",
