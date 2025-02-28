@@ -341,6 +341,7 @@ export default function About() {
           )}
         </Column>
       </Flex>
+      {/* Newsletter hidden on about page */}
     </Column>
   );
 }

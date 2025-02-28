@@ -13,7 +13,9 @@ const person = {
 };
 
 const newsletter = {
-  display: true,
+  display: typeof window !== 'undefined' ? 
+    !['/about', '/blog'].includes(window.location.pathname) : 
+    true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
