@@ -5,6 +5,7 @@ import classNames from "classnames";
 
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from "@/app/resources";
+import { VoiceWidget } from "@/components/VoiceWidget";
 
 import { Inter } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
@@ -155,6 +156,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             </Flex>
           </Flex>
           <Footer />
+          <VoiceWidget 
+            vapiKey={process.env.NEXT_PUBLIC_VAPI_KEY!}
+            assistantId={process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!}
+          />
         </Column>
       </ToastProvider>
     </Flex>
