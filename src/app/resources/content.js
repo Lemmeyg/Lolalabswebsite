@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Powered Product Manager",
+  role: "AI-focused Product Manager",
   avatar: "/images/avatar.jpg",
   location: "America/New_York", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English"], // optional: Leave the array empty if you don't want to display languages
@@ -49,7 +49,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Product Manager and AI Explorer</>,
+  headline: <>Product Manager and AI builder</>,
   subline: (
     <>
       I'm Gordon and I am using, and building, AI-powered solutions to learn more about the power of AI. I am a Product Manager for a Large eCommerce/Saas Solutions and on my own time I explore AI with a passion.
@@ -69,7 +69,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {

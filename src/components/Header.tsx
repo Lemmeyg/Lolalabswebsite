@@ -8,6 +8,7 @@ import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
 import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import { VoiceWidget } from "./VoiceWidget";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -154,7 +155,12 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex hide="s">
+              <VoiceWidget 
+                vapiKey={process.env.NEXT_PUBLIC_VAPI_KEY!}
+                assistantId={process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!}
+              />
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

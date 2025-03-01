@@ -20,17 +20,17 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
             apiKey: vapiKey,
             assistant: assistantId,
             config: {
-              position: "top-right",
+              position: "bottom-right",
               offset: "90px",
-              width: "60px",
-              height: "60px",
+              width: "200px",
+              height: "40px",
               idle: {
-                color: "rgb(152, 254, 93)",
+                color: "#000000",
                 type: "pill",
                 title: "Talk to AI Assistant",
                 subtitle: "Click to start",
                 icon: "https://unpkg.com/lucide-static@0.321.0/icons/message-circle.svg",
-                borderColor: "#808080",
+                borderColor: "#2d5731",
                 textColor: "#FFFFFF"
               },
               loading: {
@@ -39,7 +39,7 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
                 title: "Connecting...",
                 subtitle: "Please wait",
                 icon: "https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg",
-                borderColor: "#808080",
+                borderColor: "#2d5731",
                 textColor: "#FFFFFF"
               },
               active: {
@@ -48,7 +48,7 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
                 title: "Call in progress...",
                 subtitle: "Click to end call",
                 icon: "https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg",
-                borderColor: "#808080",
+                borderColor: "#2d5731",
                 textColor: "#FFFFFF"
               }
             }
@@ -76,7 +76,7 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
   }, [vapiKey, assistantId]);
 
   return (
-    <div style={{ position: 'fixed', top: 0, right: 0, zIndex: 1000 }}>
+    <div>
       <Script
         src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"
         strategy="afterInteractive"
