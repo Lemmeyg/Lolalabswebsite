@@ -11,9 +11,13 @@ import {
   Text,
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
-import TableOfContents from "@/components/about/TableOfContents";
+import dynamic from "next/dynamic";
 import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
+
+const TableOfContents = dynamic(() => import("@/components/about/TableOfContents"), {
+  ssr: false
+});
 
 export async function generateMetadata() {
   const title = about.title;
@@ -92,16 +96,9 @@ export default function About() {
         }}
       />
       {about.tableOfContent.display && (
-        <Column
-          left="0"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          position="fixed"
-          paddingLeft="24"
-          gap="32"
-          hide="s"
-        >
+        <div suppressHydrationWarning>
           <TableOfContents structure={structure} about={about} />
-        </Column>
+        </div>
       )}
       <Flex fillWidth mobileDirection="column" horizontal="center">
         {about.avatar.display && (
@@ -139,12 +136,6 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
-<<<<<<< HEAD
-            
-            
-=======
-          
->>>>>>> 96435f5 (clean up revised)
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>

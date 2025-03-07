@@ -156,11 +156,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             </Flex>
           </Flex>
           <Footer />
-          <VoiceWidget 
-            vapiKey={process.env.NEXT_PUBLIC_VAPI_KEY!}
-            assistantId={process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!}
-          />
-        </Column>
+                  </Column>
       </ToastProvider>
     </Flex>
   );

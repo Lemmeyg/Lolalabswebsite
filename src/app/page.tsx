@@ -39,7 +39,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <Flex direction="column" maxWidth="m" gap="xl" horizontal="center">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -62,8 +62,8 @@ export default function Home() {
           }),
         }}
       />
-      <Column fillWidth paddingY="l" gap="m">
-        <Column maxWidth="s">
+      <Flex direction="column" fillWidth paddingY="l" gap="m">
+        <Flex direction="column" maxWidth="s">
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
@@ -95,8 +95,8 @@ export default function Home() {
               </Flex>
             </Button>
           </RevealFx>
-        </Column>
-      </Column>
+        </Flex>
+      </Flex>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
@@ -113,11 +113,7 @@ export default function Home() {
         </Flex>
       )}
       <Projects range={[2]} />
-<<<<<<< HEAD
-      {/*{newsletter.display && <Mailchimp newsletter={newsletter} />}*/}
-=======
-      {/* {newsletter.display && <Mailchimp newsletter={newsletter} />} */}
->>>>>>> 96435f5 (clean up revised)
-    </Column>
+      {/* Newsletter hidden */}
+    </Flex>
   );
 }

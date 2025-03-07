@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
 
 interface VoiceWidgetProps {
@@ -8,7 +8,11 @@ interface VoiceWidgetProps {
   assistantId: string;
 }
 
+type WidgetState = 'idle' | 'loading' | 'active' | 'error';
+
 export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
+  const [widgetState, setWidgetState] = useState<WidgetState>('idle');
+
   useEffect(() => {
     console.log('Vapi Config:', { vapiKey, assistantId }); // Debug log
     
@@ -20,12 +24,12 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
             apiKey: vapiKey,
             assistant: assistantId,
             config: {
-              position: "bottom-right",
-              offset: "90px",
+              position: "top-right",
+              offset: "50px",
               width: "200px",
               height: "40px",
               idle: {
-                color: "#000000",
+                color: "#239376",
                 type: "pill",
                 title: "Talk to AI Assistant",
                 subtitle: "Click to start",
@@ -34,7 +38,7 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
                 textColor: "#FFFFFF"
               },
               loading: {
-                color: "#000000",
+                color: "#239376",
                 type: "pill",
                 title: "Connecting...",
                 subtitle: "Please wait",
@@ -43,7 +47,7 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
                 textColor: "#FFFFFF"
               },
               active: {
-                color: "#000000",
+                color: "#239376",
                 type: "pill",
                 title: "Call in progress...",
                 subtitle: "Click to end call",
@@ -51,11 +55,28 @@ export function VoiceWidget({ vapiKey, assistantId }: VoiceWidgetProps) {
                 borderColor: "#2d5731",
                 textColor: "#FFFFFF"
               }
+            },
+            onReady: () => {
+              setWidgetState('active');
+              console.log('Voice connection ready');
+            },
+            onCallStart: () => {
+              setWidgetState('loading');
+              console.log('Call started');
+            },
+            onCallEnd: () => {
+              setWidgetState('idle');
+              console.log('Call ended');
+            },
+            onError: (error: any) => {
+              setWidgetState('error');
+              console.error('Vapi error:', error);
             }
           });
           console.log('Vapi widget initialized successfully');
         } catch (error) {
           console.error('Error initializing Vapi widget:', error);
+          setWidgetState('error');
         }
       } else {
         console.warn('Vapi SDK not loaded yet');
@@ -135,6 +156,10 @@ declare global {
             textColor?: string;
           };
         };
+        onReady?: () => void;
+        onCallStart?: () => void;
+        onCallEnd?: () => void;
+        onError?: (error: any) => void;
       }) => void;
     };
   }

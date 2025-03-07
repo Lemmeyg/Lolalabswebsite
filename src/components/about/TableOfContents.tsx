@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Column, Flex, Text } from "@/once-ui/components";
 import styles from "./about.module.scss";
 
@@ -15,10 +15,17 @@ interface TableOfContentsProps {
       display: boolean;
       subItems: boolean;
     };
+    [key: string]: any;
   };
 }
 
 const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const scrollTo = (id: string, offset: number) => {
     const element = document.getElementById(id);
     if (element) {
@@ -32,7 +39,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
     }
   };
 
-  if (!about.tableOfContent.display) return null;
+  if (!isMounted || !about.tableOfContent.display) return null;
 
   return (
     <Column
