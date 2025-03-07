@@ -139,8 +139,12 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
+<<<<<<< HEAD
             
             
+=======
+          
+>>>>>>> 96435f5 (clean up revised)
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
